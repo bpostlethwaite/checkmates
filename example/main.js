@@ -39,6 +39,6 @@ checker.on( 'all-checked', function () {
   result.innerText = "all checkboxes checked"
 })
 
-checker.on( 'none-checked', function () {
+checker.on( 'all-unchecked', function () {
   result.innerText = "all checkboxes unchecked"
 })
