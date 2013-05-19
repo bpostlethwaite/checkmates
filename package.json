@@ -1,15 +1,16 @@
 {
   "name": "checkmates",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Sane checkbox handling for the browser",
   "main": "index.js",
   "directories": {
     "example": "example"
   },
-  "dependencies": {
+  "dependencies": {}
+  "devDependencies":{
     "ecstatic": "~0.4.2"
   },
-  "devDependencies": {},
+  ,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

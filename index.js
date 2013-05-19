@@ -52,19 +52,13 @@ function CheckMates (groupID) {
          * Clicked while indeterminate:
          * Uncheck all boxes
          */
-        Object.keys(checked).forEach( function (key) {
-          checked[key].checked = false
-          delete checked[key]
-        })
+        uncheckAll()
       } else if (group.master.checked) {
         /*
          * Wasn't indeterminate and is now checked:
          * Check all checkboxes
          */
-        checkmates.forEach( function (checkbox) {
-          checkbox.checked = true
-          checked[checkbox.value] = checkbox
-        })
+        checkAll()
       } else {
         /*
          * Wasn't indeterminate but is now unchecked:
@@ -83,7 +77,6 @@ function CheckMates (groupID) {
   }
 
   function updateState () {
-    group.state = "indeterminate"
     if (Object.keys(checked).length === checkmates.length) {
       group.master.indeterminate = false
       group.master.checked = true
@@ -94,11 +87,39 @@ function CheckMates (groupID) {
       group.master.checked = false
       group.emit('none-checked', true)
     }
+    else {
+      group.master.checked = true
+      group.master.indeterminate = true
+    }
   }
 
+  function checkAll () {
+    checkmates.forEach( function (checkbox) {
+      checkbox.checked = true
+      checked[checkbox.value] = checkbox
+    })
+  }
+
+  function removeAll () {
+    uncheckAll()
+    checkmates = []
+  }
+
+  function uncheckAll () {
+    Object.keys(checked).forEach( function (key) {
+      checked[key].checked = false
+      delete checked[key]
+    })
+  }
+
+  group.removeall = removeAll
+  group.uncheckall = uncheckAll
+  group.checkall = checkAll
   group.checkmates = checkmates
+  group.checked = checked
   group.checkbox = checkbox
   group.master = master
+
   return group
 
 }
