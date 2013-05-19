@@ -112,9 +112,9 @@ function CheckMates (groupID) {
     })
   }
 
-  group.removeall = removeAll
-  group.uncheckall = uncheckAll
-  group.checkall = checkAll
+  group.removeAll = removeAll
+  group.uncheckAll = uncheckAll
+  group.checkAll = checkAll
   group.checkmates = checkmates
   group.checked = checked
   group.checkbox = checkbox
