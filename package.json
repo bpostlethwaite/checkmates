@@ -10,7 +10,6 @@
   "devDependencies":{
     "ecstatic": "~0.4.2"
   },
-  ,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
