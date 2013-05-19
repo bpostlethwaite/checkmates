@@ -1,0 +1,33 @@
+{
+  "name": "checkmates",
+  "version": "0.0.1",
+  "description": "Sane checkbox handling for the browser",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "ecstatic": "~0.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bpostlethwaite/checkmates.git"
+  },
+  "keywords": [
+    "checkbox",
+    "html",
+    "checkmark",
+    "widget"
+  ],
+  "author": "Ben Postlethwaite",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "3f804ab19c7acb0548fa159c32a3099e1de171b3",
+  "bugs": {
+    "url": "https://github.com/bpostlethwaite/checkmates/issues"
+  }
+}

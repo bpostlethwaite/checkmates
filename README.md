@@ -1,5 +1,5 @@
 # CHECKMATES
-Module for sane checkbox handling. Create a bunch of checkbox's linked via node events to their state and value. Get a master checkbox which can check / uncheck all other checkboxes and automatically shows the proper indeterminant states. Usually use with a single group, but you can make several groups (each group is an event emitter instance) each with their own master. All checkboxes produced by a particular `checkmates` instance automatically have their class set to the `groupID` the `checkmate` function was instantiated with.
+Module for sane checkbox handling. Create a bunch of html checkbox's and manage with EventEmitter events using checkbox state and value. Get a master checkbox which can check / uncheck all other checkboxes. The master checkbox automatically shows the proper indeterminant states. Can use with a single group, or multiple, each with their own master (each group is an event emitter instance). All checkboxes produced by a particular `checkmates` instance automatically have their class set to the `groupID` the `checkmate` function was instantiated with.
 
 ## Example
 ```javascript
@@ -54,14 +54,15 @@ checker.on( 'none-checked', function () {
 npm install checkmates
 ```
 
-### Meant for Browser
-So write your code then do
+### Browser
+Write your code then do
 ```shell
 browserify main.js -o bundle.js
 ```
 and put `bundle.js` in your `index.html`
+see [browserify](https://github.com/substack/node-browserify)
 
-### Works great with node-webkit
+### Works great with [node-webkit](https://github.com/rogerwang/node-webkit)
 Just include it normally. Good for single-page apps
 
 ## License
