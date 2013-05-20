@@ -52,18 +52,21 @@ function CheckMates (groupID) {
          * Clicked while indeterminate:
          * Uncheck all boxes
          */
+        group.emit('unchecked', self.value)
         uncheckAll()
       } else if (group.master.checked) {
         /*
          * Wasn't indeterminate and is now checked:
          * Check all checkboxes
          */
+        group.emit('checked', self.value)
         checkAll()
       } else {
         /*
          * Wasn't indeterminate but is now unchecked:
          * Uncheck all boxes
          */
+        group.emit('unchecked', self.value)
         uncheckAll()
       }
     }
