@@ -44,6 +44,7 @@ checker.on( 'all-unchecked', function () {
   result.innerText = "all checkboxes unchecked"
 })
 },{"./":2}],2:[function(require,module,exports){
+
 /*
  * CHECKMATES
  *
@@ -92,6 +93,7 @@ function CheckMates (groupID) {
 
   function master(value) {
     var self = checkbox(value)
+    self.className += ' '+groupID+'-master'
     self.onclick = function () {
       if (group.master.indeterminate) {
         /*
