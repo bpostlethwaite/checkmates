@@ -1,6 +1,6 @@
 {
   "name": "checkmates",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sane checkbox handling for the browser",
   "main": "index.js",
   "directories": {
