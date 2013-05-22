@@ -45,8 +45,8 @@ function CheckMates (groupID) {
   }
 
   function master(value) {
-    var mastercb = checkbox(value)
-    mastercb.onclick = function () {
+    var self = checkbox(value)
+    self.onclick = function () {
       if (group.master.indeterminate) {
         /*
          * Clicked while indeterminate:
@@ -70,9 +70,9 @@ function CheckMates (groupID) {
         uncheckAll()
       }
     }
-    group.master = mastercb
+    group.master = self
 
-    return mastercb
+    return self
   }
 
   function updateState () {
