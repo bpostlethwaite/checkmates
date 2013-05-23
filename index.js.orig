@@ -1,3 +1,4 @@
+
 /*
  * CHECKMATES
  *
@@ -44,10 +45,16 @@ function CheckMates (groupID) {
     return self
   }
 
+<<<<<<< HEAD
   function master(value, data) {
+    var mastercb = checkbox(value)
+    mastercb.onclick = function () {
+=======
+  function master(value) {
     var self = checkbox(value)
     self.className += ' '+groupID+'-master'
     self.onclick = function () {
+>>>>>>> origin/master
       if (group.master.indeterminate) {
         /*
          * Clicked while indeterminate:
