@@ -20,7 +20,7 @@ function CheckMates (groupID) {
     , checked = {}
     , checkmates = []
 
-  function checkbox(value) {
+  function checkbox(value, data) {
     /*
      * Tie to DOM
      */
@@ -32,10 +32,10 @@ function CheckMates (groupID) {
     self.onclick = function () {
       if (self.checked) {
         checked[self.value] = self
-        group.emit('checked', self.value)
+        group.emit('checked', self.value, data)
       }  else {
         delete checked[self.value]
-        group.emit('unchecked', self.value)
+        group.emit('unchecked', self.value, data)
       }
       updateState()
     }
@@ -44,7 +44,7 @@ function CheckMates (groupID) {
     return self
   }
 
-  function master(value) {
+  function master(value, data) {
     var mastercb = checkbox(value)
     mastercb.onclick = function () {
       if (group.master.indeterminate) {
@@ -52,21 +52,21 @@ function CheckMates (groupID) {
          * Clicked while indeterminate:
          * Uncheck all boxes
          */
-        group.emit('unchecked', self.value)
+        group.emit('unchecked', self.value, data)
         uncheckAll()
       } else if (group.master.checked) {
         /*
          * Wasn't indeterminate and is now checked:
          * Check all checkboxes
          */
-        group.emit('checked', self.value)
+        group.emit('checked', self.value, data)
         checkAll()
       } else {
         /*
          * Wasn't indeterminate but is now unchecked:
          * Uncheck all boxes
          */
-        group.emit('unchecked', self.value)
+        group.emit('unchecked', self.value, data)
         uncheckAll()
       }
     }
